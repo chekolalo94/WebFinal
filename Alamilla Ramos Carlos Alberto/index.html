@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Los Pasteles de Gio</title>
+  <link rel="shortcut icon" href="img/ico.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo1.css">
+
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 90%;
+      margin: auto;
+  }
+  </style>
+
+</head>
+
+<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.png" style="margin-top: -15px; height: 100px;width: 150px;"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li id="elemento1" class="active"><a href="#" onclick="cargarPestana('home.html','elemento1')">Home</a></li>
+        <li id="elemento2"><a href="#" onclick="cargarPestana('conocenos.html','elemento2')">Conocenos</a></li>
+        <li id="elemento3"><a href="#" onclick="cargarPestana('media.html','elemento3')">Media</a></li>
+        <li><a href="#" onclick="openModal('modallargo');">Contactanos</a></li>
+        <li id="elemento4"><a href="home.php">Administrar</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" class="redes">
+        <li><a href="https://www.facebook.com/lospastelesdegio/?fref=ts" target="_blank"><i class="fa fa-facebook-official" style="font-size:30px;color:white"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus-official" style="font-size:30px;color:white"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" style="font-size:30px;color:white"></i></a></li>
+        <li><a href="https://www.instagram.com/giovannaborjal/" target="_blank"><i class="fa fa-instagram" style="font-size:30px;color:white;"></i  ></a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+</header>
+
+<body style="padding-top: 70px;background-image: url(img/fondo.jpg); height: 100%; width: 100%;">
+  <div id="index">
+      <!--- Aqui se carga el contenido seleccionado>
+      <!-->
+  </div>
+  <div id="modallargo" class="modal fade">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" id="divcontenido">
+          <!---->
+          <!---->
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function openpag(pagina){
+      $('#index').load(pagina);
+    }
+    openpag("home.html");
+
+    function cargarPestana(pestanaabrir,elementoActivo){
+      $('#index').load(pestanaabrir);
+      $("#elemento1").removeClass("active");
+      $("#elemento2").removeClass("active");
+      $("#elemento3").removeClass("active");
+      $("#elemento4").removeClass("active");
+      $("#"+elementoActivo).addClass("active");
+    }
+    cargarPestana();
+
+
+    function openModal(modalAbrir){
+      $('#'+modalAbrir).modal('show');
+      $('#divcontenido').load('modales.html');
+    }
+    openModal();
+  </script>
+
+</body>
+<footer style="padding-right: 15px; padding-left: 15px;">
+<br>
+<br>
+  <div class="row">
+  <div class="col-lg-4" style="text-align: right;"><img src="img/logo.png" height="50%" width="50%"></div>
+    <div class="col-lg-4">
+    <div style="font-family: Gabriola; color: white; padding-left:30px;"><p><h1>Los Pasteles de Gio</h1></p></div>
+      <ul class="social">
+        <li> <a href="https://www.facebook.com/lospastelesdegio/?fref=ts" target="_blank"> <i class=" fa fa-facebook">   </i> </a> </li>
+        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+        <li> <a href="https://www.instagram.com/giovannaborjal/" target="_blank"> <i class="fa fa-instagram">   </i> </a> </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</html>
